@@ -10,3 +10,4 @@ Lista projektow
     Program pisany w czasie wolnym, mający na celu symulować naciskanie konkretnych klawiszy w pętli. Program ma na celu zautomatyzowanie wytwarzania run magicznych w popularnym       MMORPG'u. (W trakcie realizacji)
 5. ConsoleApp2 (C#)
     Program wyświetlający obrazki ASCII przy pomocy cmd wraz z muzyką. Prosta aplikacja konsolowa.
+6. Czas grupowy (JavaScript)
