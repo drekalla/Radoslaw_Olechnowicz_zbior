@@ -1,0 +1,11 @@
+{% extends "baza.html" %}
+{% block content %}
+<p class=
+"lead">Podaj login oraz hasło aby obejrzeć zawartość strony.</p>
+<form action="{{ url_for('login') }}" method="post">
+ <p><input type=text name=login>
+ <p><input type=password name=haslo>
+ <p><input type=submit value=Login>
+ </form>
+{% endblock %}
+          

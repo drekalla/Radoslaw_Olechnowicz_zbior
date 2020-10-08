@@ -1,0 +1,15 @@
+body {
+    font-size:18px; color:#812394;
+    background:#1fa0c0;
+    font-family: 'Germania One', cursive;
+} 
+.navbar-default .nav li a .glyphicon {
+    color: #2a53c4;
+    } 
+p {
+        border:3px solid;
+        text-align:center;
+      }
+h3 {
+	text-align:center;
+}

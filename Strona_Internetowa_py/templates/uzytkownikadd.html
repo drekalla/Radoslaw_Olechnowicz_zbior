@@ -1,0 +1,18 @@
+{% extends "baza.html" %}
+{% block content %}
+<h2>Dodaj Uzytkownika</h2>
+<form action = "{{ url_for('addrec') }}" method = "POST">
+
+ Login<br>
+ <input type = "text" name = "login" />
+
+ Hasło<br>
+ <input type = "text" name = "haslo" /></textarea><br>
+
+ <input type = "submit" value = "Zapisz" /><br>
+ </form>
+{% endblock %}
+
+      
+        
+

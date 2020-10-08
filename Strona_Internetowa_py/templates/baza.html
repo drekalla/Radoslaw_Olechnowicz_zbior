@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" ng-app="portfolioApp">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
+
+    
+    <link href="style.css" rel="stylesheet">
+    <title>Too Long, Don't Read</title>
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="js/angular.min.js"></script> 
+    <script src="js/controllers.js"></script> 
+
+    <nav class="navbar-inverse navbar-fixed-top">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">
+                  
+                  <p>TLDR <img src="img/logo.jpg" width="35" height="35" alt="logo" /></p>
+              </a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-collapse-1">
+              <ul class="nav navbar-nav text-right">
+                  <li class="active"><a href="/" title="Strona główna">Strona główna
+                      <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                  </a></li>
+                  <li><a href="/oczekujace" title="Galeria">Oczekujące
+                      <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                  </a></li>
+                  <li><a href="/dodaj" title="Dodaj">Dodaj
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  </a></li>
+                  <li><a href="/rejestracja" title="Rejestracja">Rejestracja
+                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                  </a></li>
+                  {% if current_user.is_authenticated %}
+                  <li><a href="/wyloguj" title="Wyloguj">Wyloguj
+                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                  </a></li>
+                  {% else %}
+                  <li><a href="/logowanie" title="Logowanie">Logowanie
+                    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                  </a></li>
+                  {% endif %}
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+  <header>
+    <img src="img/head.jpg" width="100%" height="300" alt="tlo" />
+  </header>
+
+  <section id="main-page" class="jumbotron">
+      {% block content %} {% endblock %}
+  </section>
+
+  <footer>
+      <div class="container">
+        <a href="#" class="btn btn-primary btn-xs" role="button" data-toggle="modal" data-target="#myModal">Dane kontaktowe</a>
+      </div>
+  </footer>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Dane kontaktowe</h4>
+            </div>
+            <div class="modal-body">
+                
+              <hr/>
+              <div class="col-sm-4 text-center">
+                <img id="ico" src="img/adres.jpg" width="60" height="60" alt="adres">
+                <p class="text-info">19-300 Zabłociczno ul.Nie_istniejąca 14A</p>
+            </div>
+			
+            <div class="col-sm-4 text-center">
+                <img id="ico" src="img/telefon.png" width="60" height="60" alt="telefon">
+                <p class="text-info">Tel: +48 997-998-999</p>
+            </div>
+
+            <div class="col-sm-4 text-center">
+                <img id="ico" src="img/mail.jpg" width="60" height="60" alt="mail">
+                <p class="text-info">E-mail: TLDR@gmail.com</p>
+            </div>
+    
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-xs" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
